@@ -1,6 +1,6 @@
 # Lab 3: Testing & CI/CD for ML Systems
 
-[![CI Pipeline](https://github.com/<your-github-username>/ddm501-lab3-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/<your-github-username>/ddm501-lab3-starter/actions/workflows/ci.yml)
+[![CI Pipeline](https://github.com/SonDuong-fsb/Lab3/actions/workflows/ci.yml/badge.svg)](https://github.com/SonDuong-fsb/Lab3/actions/workflows/ci.yml)
 
 Testing strategy and CI/CD pipelines for the movie rating prediction system (FastAPI + SVD collaborative filtering on MovieLens 100K).
 
@@ -24,7 +24,7 @@ Details and rationale: [docs/TESTING_STRATEGY.md](docs/TESTING_STRATEGY.md).
 ## Project Structure
 
 ```
-ddm501-lab3-starter/
+Lab3/
 ├── app/
 │   ├── __init__.py
 │   ├── main.py                 # FastAPI application
@@ -62,8 +62,8 @@ Python 3.10 is the supported version (it is what CI uses, and `scikit-surprise==
 Building `scikit-surprise` needs a C compiler (`build-essential` on Debian/Ubuntu, MSVC Build Tools on Windows).
 
 ```bash
-git clone https://github.com/<your-github-username>/ddm501-lab3-starter.git
-cd ddm501-lab3-starter
+git clone https://github.com/SonDuong-fsb/Lab3.git
+cd Lab3
 
 python -m venv venv
 source venv/bin/activate
@@ -159,7 +159,7 @@ To cut a release: `git tag v1.0.0 && git push origin v1.0.0`. To roll back, rede
 - [x] Pre-commit hooks configured
 - [x] Coverage above 80%
 - [x] Testing strategy document
-- [ ] Replace `<your-github-username>` in the badge URLs and push to GitHub
+- [x] Badge URLs point to SonDuong-fsb/Lab3
 - [ ] Add screenshots of passing workflow runs
 
 ## License
