@@ -154,6 +154,20 @@ To cut a release: `git tag v1.0.0 && git push origin v1.0.0`. To roll back, rede
 | Data | Ranges, nulls, types, uniqueness and distribution of the MovieLens data |
 | Model | Invariance, directional, minimum functionality, MAE/RMSE thresholds, robustness |
 
+## CI Evidence
+
+All four CI jobs passing on `main`:
+
+![CI workflow run](docs/screenshots/ci-workflow-run.png)
+
+175 tests passing with 100% coverage against the 80% gate:
+
+![CI test log](docs/screenshots/ci-test-log.png)
+
+Badge on the repository README:
+
+![README badge](docs/screenshots/readme-badge.png)
+
 ## Submission Checklist
 
 - [x] Unit, integration, data and model tests implemented
@@ -162,7 +176,7 @@ To cut a release: `git tag v1.0.0 && git push origin v1.0.0`. To roll back, rede
 - [x] Coverage above 80%
 - [x] Testing strategy document
 - [x] Badge URLs point to SonDuong-fsb/Lab3
-- [ ] Add screenshots of passing workflow runs
+- [x] Screenshots of passing workflow runs
 
 ## License
 
