@@ -77,8 +77,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          bash scripts/install_requirements.sh
           pip install mypy==1.8.0 types-requests==2.31.0.0
 
       - name: Run mypy
@@ -115,8 +114,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          bash scripts/install_requirements.sh
           pip install -r requirements-dev.txt
 
       - name: Train model

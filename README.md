@@ -68,9 +68,11 @@ cd Lab3
 python -m venv venv
 source venv/bin/activate
 
-pip install -r requirements.txt
+bash scripts/install_requirements.sh
 pip install -r requirements-dev.txt
 ```
+
+The script installs `numpy` first and then builds `scikit-surprise` with `--no-build-isolation`. A plain `pip install -r requirements.txt` fails on current pip, because the `scikit-surprise` 1.1.3 build script calls `pip` from inside pip's isolated build environment.
 
 ### 2. Train the model
 

@@ -1,23 +1,29 @@
 FROM python:3.10-slim AS builder
 
+ENV VIRTUAL_ENV=/opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
 WORKDIR /build
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends build-essential \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && python -m venv /opt/venv
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
+COPY requirements.txt ./
+COPY scripts/install_requirements.sh ./scripts/
+RUN bash scripts/install_requirements.sh
 
 
 FROM python:3.10-slim
 
-ENV PYTHONDONTWRITEBYTECODE=1 \
+ENV PATH="/opt/venv/bin:$PATH" \
+    PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-COPY --from=builder /install /usr/local
+COPY --from=builder /opt/venv /opt/venv
 COPY app/ ./app/
 COPY scripts/ ./scripts/
 COPY models/ ./models/
